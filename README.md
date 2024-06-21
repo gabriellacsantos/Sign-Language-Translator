@@ -1,6 +1,6 @@
-# Sign Language Translator
+# Number Sign Language Translator
 
- This is an AI Sign Language Interpreter using a Jetson Nano!
+ This is an AI Number Sign Language Interpreter using a Jetson Nano!
 
 ![add image descrition here](direct image link here)
 
