@@ -1,15 +1,13 @@
 import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
-from google.colab.patches import cv2_imshow
 
 # Load the pre-trained model
-model = load_model('sign_language_model.h5')
+model = load_model('sign_language_model.h5')  # Adjust the path if necessary
 
 # Define the dictionary for letters
 letters = {0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9'}
 
-# Function to capture video from the webcam
 def video_capture():
     cap = cv2.VideoCapture(0)
     while True:
@@ -30,13 +28,14 @@ def video_capture():
         # Make a prediction
         pred = model.predict(roi)
         letter = letters[np.argmax(pred)]
-
+        print (letter)
+         
         # Display the resulting frame with the prediction
-        cv2.putText(frame, letter, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
-        cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-        cv2_imshow(frame)  # Use cv2_imshow in Colab
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        # cv2.putText(frame, letter, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2, cv2.LINE_AA)
+        # cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        # cv2.imshow('Sign Language Translator', frame)
+        # if cv2.waitKey(1) & 0xFF == ord('q'):
+            # break
 
     cap.release()
     cv2.destroyAllWindows()
