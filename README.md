@@ -12,7 +12,7 @@ My AI Sign Language Interpreter Robot uses advanced technology to interpret ASL 
 
 ## Running this project
 
-1. Add steps for running this project.
-2. Make sure to include any required libraries that need to be installed for your project to run.
+1. In Google Colab, install opencv-headless using: !pip install opencv-python-headless
+2. Install tensorflow using: pip install pip install tensorflow==1.15.3
 
 [View a video explanation here](video link)
